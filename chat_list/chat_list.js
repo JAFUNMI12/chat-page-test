@@ -15,6 +15,8 @@ const db = firebase.database();
 let existlogin;
 db.ref("chat_login").get().then((snapshot) => {
     existlogin = snapshot.val();
+    existlogin = JSON.parse(existlogin);
+
     document.getElementById("welict").innerText =
         "(You) " + existlogin.name;
 
